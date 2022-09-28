@@ -1,4 +1,8 @@
-    <div id="footer">
+<br>
+<br>
+<br>
+<br>
+    <div class='d-grid gap-2 col-6 mx-auto' id="footer">
         <?php echo 'Copyright ' . date('y');?>
     </div>
 </div>
@@ -12,7 +16,12 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
         $(function(){
-        $("#dob").datepicker();
+        $("#dob").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-100:+0",
+
+        });
     });
     </script>
     
