@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $contact = $_POST['phone'];
     // call function to track if success or not
-    $isSuccess = $crud->insert($firstname, $lastname, $dob, $specialty, $email, $contact);
+    $isSuccess = $crud->insertAttendee($firstname, $lastname, $dob, $specialty, $email, $contact);
 
     if ($isSuccess) {
         # code...

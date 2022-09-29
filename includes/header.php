@@ -23,7 +23,7 @@
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Attendees</a>
+          <a class="nav-link" href="viewrecords.php">Seminar Attendees</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>

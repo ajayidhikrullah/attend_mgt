@@ -7,7 +7,7 @@
             $this->db = $conn;
         }
         //insert record in DB
-        public function insert($fname, $lname, $dob, $spec, $email, $contact){
+        public function insertAttendee($fname, $lname, $dob, $spec, $email, $contact){
             try {
                 //code...
                 $sql = "INSERT INTO attendee_tb (`firstname`, `lastname`, `dob`, `specialty_id`, `email`, `phone`) VALUES (:fname,:lname,:dob,:spec,:email,:contact)";
@@ -29,6 +29,12 @@
                 return false;
             }
 
+        }
+
+        public function getAttendee(){
+            $sql = "SELECT * FROM `attendee_tb` ORDER BY `attendee_id` DESC";
+            $result = $this->db->query($sql);
+            return $result;
         }
 
 
