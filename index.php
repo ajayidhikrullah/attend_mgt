@@ -3,7 +3,7 @@
 
     $title = 'Index';
     require_once 'includes/header.php';
-    require_once 'db/conn.php';
+    // require_once 'db/conn.php';
 ?>
 
         <h1 class="text-center">Registration for Conference</h1>
@@ -25,7 +25,7 @@
                 <!-- <input type="text" class="form-control" id="specialty"> -->
                 <select class="form-control" name='specialty' id="specialty">
                     <option value="">DB Admin</option>
-                    <option value="">Project Manager</option>
+                    <option value="1">Project Manager</option>
                     <option value="">Cybersecurity</option>
                 </select>
             </div>
