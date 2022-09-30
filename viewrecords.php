@@ -16,10 +16,7 @@
       <th scope="col">#</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
-      <th scope="col">Email</th>
       <th scope="col">Speciality</th>
-      <th scope="col">Phone contact</th>
-      <th scope="col">Date of Birth</th>
       <th scope="col">Actions</th>
 
     </tr>
@@ -30,11 +27,11 @@
             <th scope="row"><?=$r['attendee_id']?></th>
             <td><?=$r['firstname']?></td>
             <td><?=$r['lastname']?></td>
-            <td><?=$r['email']?></td>
-            <td><?=$r['name']?></td>
-            <td><?=$r['phone']?></td>
             <td><?=$r['dob']?></td>
-            <td><a href="view.php" class="btn btn-primary">View</a></td>
+            <td>
+                <a href="view.php?id=<?=$r['attendee_id']?>" class="btn btn-primary">View</a>
+                <a href="edit.php?id=<?=$r['attendee_id']?>" class="btn btn-warning">Edit</a>
+            </td>
             </tr>  
         <tbody>
     <?php } ?>
