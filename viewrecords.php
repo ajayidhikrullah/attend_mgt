@@ -20,7 +20,7 @@
       <th scope="col">Speciality</th>
       <th scope="col">Phone contact</th>
       <th scope="col">Date of Birth</th>
-
+      <th scope="col">Actions</th>
 
     </tr>
   </thead>
@@ -31,9 +31,10 @@
             <td><?=$r['firstname']?></td>
             <td><?=$r['lastname']?></td>
             <td><?=$r['email']?></td>
-            <td><?=$r['specialty_id']?></td>
+            <td><?=$r['name']?></td>
             <td><?=$r['phone']?></td>
             <td><?=$r['dob']?></td>
+            <td><a href="view.php" class="btn btn-primary">View</a></td>
             </tr>  
         <tbody>
     <?php } ?>

@@ -32,9 +32,16 @@
         }
 
         public function getAttendee(){
-            $sql = "SELECT * FROM `attendee_tb` ORDER BY `attendee_id` DESC";
+            $sql = "SELECT * FROM `attendee_tb` attd INNER JOIN specialty_tb spec ON attd.specialty_id = spec.specialty_id ORDER BY `attendee_id` DESC";
             $result = $this->db->query($sql);
             return $result;
+        }
+
+        public function getSpecialty(){
+            $sql = "SELECT * FROM specialty_tb";
+            $result = $this->db->query($sql);
+            return $result;
+
         }
 
 
