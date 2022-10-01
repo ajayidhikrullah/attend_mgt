@@ -16,7 +16,7 @@ if (!isset($_GET['id'])) {
 ?>
 
     <h1 class="text-center">Edit Registered Attendees</h1>
-    <form method='POST' action='sucess.php'>
+    <form method='POST' action='editpost.php'>
         <input type="hidden" name="id" value = "<?= $attendee['attendee_id'];?>">
         <div class="mb-3">
             <label for="firstname" value="<?= $fname?>" class="form-label">First Name</label>
