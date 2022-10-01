@@ -56,6 +56,20 @@
             }
         }
 
+        public function deleteAttendee($id){
+            try {
+                $sql = "DELETE FROM attendee_tb WHERE `attendee_id` = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam('id', $id);
+                $stmt->execute();
+                return true;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+
+        }
+
         public function getAttendee(){
             $sql = "SELECT * FROM `attendee_tb` attd INNER JOIN specialty_tb spec ON attd.specialty_id = spec.specialty_id ORDER BY `attendee_id` DESC";
             $result = $this->db->query($sql);
