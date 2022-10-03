@@ -18,10 +18,9 @@ if(isset($_POST['submit'])){
     $isSuccess = $crud->insertAttendee($firstname, $lastname, $dob, $specialty, $email, $contact);
 
     if ($isSuccess) {
-        # code...
-        echo "<h1 class='text-center text-success'>You successfully registered for the conference</h1>";
-    } else{
-        echo "<h1 class='text-center text-danger'>Not Successful, something is wrong!</h1>";
+        include 'includes/succesmessage.php';
+        } else{
+            include 'includes/errormessage.php';
         
     }
 

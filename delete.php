@@ -2,8 +2,8 @@
 require_once 'db/conn.php';
 
     if (!$_GET['id']) {
-        # code...
-        echo 'error';
+        include 'includes/erroemessage.php';
+        header("Location: viewrecords.php");
     } else{
         //get id values
         $id = $_GET['id'];
@@ -13,7 +13,7 @@ require_once 'db/conn.php';
             # code...
             header("Location: viewrecords.php");
         } else{
-            echo 'delete error';
+            include 'includes/errormessage.php';
         }
 
         // redirect to the list agai

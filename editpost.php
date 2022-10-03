@@ -19,8 +19,11 @@ if(isset($_POST['submit'])){
         # code...
             header('Location: viewrecords.php');
         }
+        else{
+            include 'includes/errormessage.php';
+        }
     } else{
-        echo 'error';
+        include 'includes/errormessage.php';
     }
 
 ?>

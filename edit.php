@@ -7,8 +7,8 @@ require_once 'db/conn.php';
 
 $result = $crud->getSpecialty();
 if (!isset($_GET['id'])) {
-    # code...
-    echo 'error';
+    include 'includes/errormessage.php';
+    header("Location : viewrecords.php");
 }else{
     $id = $_GET['id'];
     $attendee = $crud->getAttendeeDetail($id);
