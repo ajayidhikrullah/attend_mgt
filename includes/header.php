@@ -1,3 +1,6 @@
+<?php
+  include_once 'includes\session.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,23 +21,35 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="viewrecords.php">Seminar Attendees</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
+      <div class="navbar-nav mr-auto">      
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link bg" href="viewrecords.php">Seminar Attendees</a>
+            </li>
+          </ul>
+      </div>
     </div>
+    <div class="nav justify-content-end">      
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+
+              <?php
+                  if (!isset($_SESSION['userId'])) {
+              ?>
+                <a class="nav-link active" aria-current="page" href="login.php">Login</a>
+              <?php } else { ?>
+                <a href="#" class="nav-link active"><span>Hello <?php echo $_SESSION['username'];?></span></a>
+                <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
+              <?php } ?>
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+      </div>    
   </div>
 </nav>
 
 <br/>
-

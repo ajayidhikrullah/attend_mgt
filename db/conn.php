@@ -17,6 +17,12 @@
     }
 
     require 'crud.php';
+    require 'user.php';
     $crud = new Crud($pdo);
+    $user = new User($pdo);
+
+    $user->insertUser('Admin', 'password');
+    $newU = $user->insertUser('Super-Admin', 'pass');
+    // var_dump($newU);exit;
 
 ?>
