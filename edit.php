@@ -3,6 +3,7 @@
 
 $title = 'Edit Attendees';
 require_once 'includes/header.php';
+require_once 'includes/auth.php';
 require_once 'db/conn.php';
 
 $result = $crud->getSpecialty();

@@ -2,7 +2,7 @@
 <?php
 
 require_once 'db/conn.php';
-
+require_once 'includes/auth.php';
 
 if(isset($_POST['submit'])){
     //

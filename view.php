@@ -3,6 +3,7 @@
 
 $title = 'View Details';
 require_once 'includes/header.php';
+require_once 'includes/auth.php';
 require_once 'db/conn.php';
 
 //get attendee by id
