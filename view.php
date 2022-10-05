@@ -20,7 +20,7 @@ if (!isset($_GET['id'])) {
             <h5 class="card-title"><?= $result['firstname'] .' ' . $result['lastname'];?></h5>
             <h6 class="card-subtitle mb-2 text-muted"><?=$result['dob'];?></h6>
             <h6 class="card-subtitle mb-2 text-muted"><?=$result['name'];?></h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text"></p>
             <a href="#" class="card-link"><?=$result['email']?></a>
             <a href="#" class="card-link"><?= $result['phone'];?></a>
         </div>
