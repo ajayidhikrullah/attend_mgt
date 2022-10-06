@@ -15,12 +15,16 @@ if (!isset($_GET['id'])) {
     $result = $crud->getAttendeeDetail($id);
 ?>
 
+
+    <img src="<?php echo empty($result['avatar_path']) ? "prof_uploads/blank.png" : $result['avatar_path']; ?>" alt="">
+    <br/>
+    <br/>
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title"><?= $result['firstname'] .' ' . $result['lastname'];?></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><?=$result['dob'];?></h6>
             <h6 class="card-subtitle mb-2 text-muted"><?=$result['name'];?></h6>
             <p class="card-text"></p>
+            <h6 class="card-subtitle mb-2 text-muted"><?=$result['dob'];?></h6>
             <a href="#" class="card-link"><?=$result['email']?></a>
             <a href="#" class="card-link"><?= $result['phone'];?></a>
         </div>

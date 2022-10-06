@@ -14,7 +14,7 @@
             try {
                 return $response;
             } catch (\Exception $e) {
-                echo 'Email Exception caught ooo: ' . $e->getMessage() .'"\n";
+                echo 'Email Exception caught ooo: ' . $e->getMessage() ."\n";
                 return false;
             }
         }

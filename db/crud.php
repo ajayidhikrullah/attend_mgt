@@ -7,9 +7,9 @@
             $this->db = $conn;
         }
         //insert record in DB
-        public function insertAttendee($fname, $lname, $dob, $spec, $email, $contact){
+        public function insertAttendee($fname, $lname, $dob, $spec, $email, $contact, $avatar_path){
             try {
-                $sql = "INSERT INTO attendee_tb (`firstname`, `lastname`, `dob`, `specialty_id`, `email`, `phone`) VALUES (:fname,:lname,:dob,:spec,:email,:contact)";
+                $sql = "INSERT INTO attendee_tb (`firstname`, `lastname`, `dob`, `specialty_id`, `email`, `phone`, `avatar_path`) VALUES (:fname,:lname,:dob,:spec,:email,:contact, :avatar_path)";
                 $stmt = $this->db->prepare($sql);
                 //bind all placeholders to the actual values
                 $stmt->bindparam(':fname',$fname);
@@ -18,6 +18,7 @@
                 $stmt->bindparam(':spec', $spec);
                 $stmt->bindparam(':email', $email);
                 $stmt->bindparam(':contact', $contact);
+                $stmt->bindparam(':avatar_path', $avatar_path);
                 
                 // execute statement
                 $stmt->execute();

@@ -9,7 +9,7 @@
 ?>
 
         <h1 class="text-center">Registration for Conference</h1>
-        <form method='POST' action='sucess.php'>
+        <form method='POST' action='sucess.php' enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="firstname" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="firstname" name='firstname' placeholder="your first name">
@@ -38,10 +38,15 @@
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Contact Number</label>
-                <input type="text" name='phone' class="form-control" id="phone" aria-describedby="phoneHelp">
+                <input type="text" name="phone" class="form-control" id="phone" aria-describedby="phoneHelp">
                 <div id="phoneHelp" class="form-text">We'll never share your number with anyone else.</div>
             </div>
 
+            <div class="custom-file">
+                <input type="file" accept="image/*" name="avatar" class="custom-file-input " id="avatar">
+                <small id="avatar" class="form-test text-danger">File upload is optional</small>
+            </div>
+            <br>
             <div class="d-grid gap-2 col-6 mx-auto">
                 <button type="submit" class="btn btn-primary btn-block" name='submit'>Submit</button>
 
