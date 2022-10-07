@@ -18,8 +18,10 @@
 
     require 'crud.php';
     require 'user.php';
+    require 'validate.php';
     $crud = new Crud($pdo);
     $user = new User($pdo);
+    $validate = new Validate($pdo);
 
     $user->insertUser('Admin', 'password');
     $newU = $user->insertUser('Super-Admin', 'pass');
