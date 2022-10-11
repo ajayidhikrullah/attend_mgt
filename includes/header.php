@@ -43,7 +43,8 @@
               ?>
                 <a class="nav-link active" aria-current="page" href="login.php">Login</a>
               <?php } else { ?>
-                <a href="#" class="nav-link active"><span>Hello <?php echo $_SESSION['username'];?></span></a>
+                <img src="<?php echo empty($SESSION['avatar_path']) ? "prof_uploads/blank.png" : $SESSION['avatar_path']; ?>" alt="">
+                <a href="#" class="nav-link active"><span>Welcome <?php echo $_SESSION['username'];?></span></a>
                 <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
               <?php } ?>
             </li>

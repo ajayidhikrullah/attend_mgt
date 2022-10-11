@@ -24,7 +24,9 @@
     $validate = new Validate($pdo);
 
     $user->insertUser('Admin', 'password');
+    // $newU = $user->insertUser('Super-Admin', 'pass');
     $newU = $user->insertUser('Super-Admin', 'pass');
+
     // var_dump($newU);exit;
 
 ?>
