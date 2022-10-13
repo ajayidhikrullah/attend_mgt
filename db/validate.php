@@ -48,10 +48,10 @@
         public function emptyInput($firstname){
             $result;
             if(!empty($firstname)){
-                $result = true;
+                $result = false;
             }
             else{
-                $result = false;
+                $result = true;
             }
             return $result;
         }

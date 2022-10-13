@@ -3,18 +3,24 @@
 
     require_once 'includes/header.php';
     require_once 'db/conn.php';
-    
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
         $new_password = md5($password.$username);
 
         $result = $user->getUser($username, $new_password);
+    // var_dump($password);exit();
+
         if (!$result) {
+    // var_dump($username);exit();
+
             echo "<div class='alert alert-danger'>Username or Password is Incorrect! Please check your information is correct...</div>";
         } else {
+    // var_dump('Yes');exit();
+
             $_SESSION['username'] = $username;
-            $_SESSION['userId'] = $result['id'];
+            $_SESSION['userId'] = $result['users_id'];
             header("Location: viewrecords.php");
         }
     }
@@ -38,7 +44,7 @@
             <td>
                 <input type="password" name="password" id="password" value="" class="form-control" id="password">
 
-                <?php if(empty($password) && isset($password_error)) echo "<p class='text-danger'>$password_error</p>"?>;
+                <?php if(empty($password) && isset($password_error)) echo "<p class='text-danger'>$password_error</p>";?>
 
             </td>
         </tr>

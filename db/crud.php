@@ -9,7 +9,7 @@
         //insert record in DB
         public function insertAttendee($fname, $lname, $dob, $spec, $email, $contact, $avatar_path){
             try {
-                $sql = "INSERT INTO attendee_tb (`firstname`, `lastname`, `dob`, `specialty_id`, `email`, `phone`, `avatar_path`) VALUES (:fname,:lname,:dob,:spec,:email,:contact, :avatar_path)";
+                $sql = "INSERT INTO attendee_tb (`firstname`, `lastname`, `dob`, `specialty_id`, `email`, `phone`, `avatar_path`, `users_id`) VALUES (:fname,:lname,:dob,:spec,:email,:contact, :avatar_path, ((SELECT `users_id` FROM `users` WHERE `username` = 'user')))";
                 $stmt = $this->db->prepare($sql);
                 //bind all placeholders to the actual values
                 $stmt->bindparam(':fname',$fname);

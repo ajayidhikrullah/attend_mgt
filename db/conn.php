@@ -23,9 +23,14 @@
     $user = new User($pdo);
     $validate = new Validate($pdo);
 
-    $user->insertUser('Admin', 'password');
+    // $user->insertUser('Admin', 'password');
     // $newU = $user->insertUser('Super-Admin', 'pass');
-    $newU = $user->insertUser('Super-Admin', 'pass');
+    // $newU = $user->insertUser('user', 'password');
+    // $sql = "SELECT * FROM `users` WHERE `dob` = '0000-00-00
+    // '";
+    // $stmt = $pdo->prepare($sql);
+    // $stmt->execute();
+
 
     // var_dump($newU);exit;
 

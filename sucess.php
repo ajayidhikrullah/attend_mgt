@@ -26,9 +26,9 @@ if(isset($_POST['submit'])){
     // call function to track if success or not
     // $checkEmail = $validate->emptyInput($firstname);
 
-
-    $validation = $validate->backEndValidation($firstname, $email);
     // var_dump($checkEmail);exit;
+    
+    $validation = $validate->backEndValidation($firstname, $email);
 
     $isSuccess = $crud->insertAttendee($firstname, $lastname, $dob, $specialty, $email, $contact, $dest);
     $specialtyName = $crud->getSpecialtyById($specialty);
@@ -36,6 +36,7 @@ if(isset($_POST['submit'])){
     if ($validation || $isSuccess) {
         // SendEmail::SendMail($email, 'TESTING', 'Welcome to IT conference 2022, You have sucesssfully registered'); 
         include 'includes/succesmessage.php';
+        header('Location: view.php');
         } else{
             include 'includes/errormessage.php';
         
