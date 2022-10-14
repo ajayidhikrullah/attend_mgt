@@ -1,9 +1,16 @@
 img{
     width: 15%;
     border: 2px solid grey;
-    border-radius: 20%;
+    border-radius: 60%;
+    /* background-color: rgb(184, 82, 82); */
+
 }
 
-/* img.profile_img{
-
-} */
+.error{
+    /* color: white; */ 
+        background-color: rgb(250, 164, 164);
+        width:  auto 0;
+        padding: 5px;
+        border: 2px solid rgb(250, 164, 164);
+        border-radius: 5px;
+}
