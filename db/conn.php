@@ -21,7 +21,7 @@
     require 'validate.php';
     $crud = new Crud($pdo);
     $user = new User($pdo);
-    $validate = new Validate($pdo);
+    $validate = new Validate($pdo, $crud);
 
     // $user->insertUser('Admin', 'password');
     // $newU = $user->insertUser('Super-Admin', 'pass');
@@ -32,6 +32,15 @@
     // $stmt->execute();
 
 
-    // var_dump($newU);exit;
+    // var_dump($crud->quick());exit;
+    
+   
 
+
+        // print_r(get_class_methods('Validate'));
+        // print_r(get_class_vars('Validate'));
+
+        
+    // $result = new Validate($pdo);
+    
 ?>

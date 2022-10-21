@@ -79,7 +79,6 @@
 
         public function getAttendeeDetail($id){
             try {
-                //code...
                 $sql = "SELECT * FROM attendee_tb attend INNER JOIN specialty_tb spec on attend.specialty_id = spec.specialty_id WHERE attendee_id = :id";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':id', $id);
@@ -115,8 +114,28 @@
             }
         }
 
+        public function checkEmail($email){
+            try {
+                $sql = "SELECT * FROM `attendee_tb` WHERE `email` = :email";
+                // $sql = 'SELECT * FROM `attendee_tb` WHERE `email` = :email';
 
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':email', $email);
+                $stmt->execute();
+                // $result = $stmt->fetch();
+                $ans = $stmt->rowCount();
+                if ($ans > 0) {
+                    var_dump('TAKEN OOOOO');exit;
+                } else {
+                    var_dump('Not taken');exit;
 
+                }
+                return $ans;
+            } catch (\PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
 
 
 
