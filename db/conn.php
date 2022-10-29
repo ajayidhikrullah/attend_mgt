@@ -21,7 +21,7 @@
     require 'validate.php';
     $crud = new Crud($pdo);
     $user = new User($pdo);
-    $validate = new Validate($pdo, $crud);
+    $validate = new Validate($pdo);
 
     // $user->insertUser('Admin', 'password');
     // $newU = $user->insertUser('Super-Admin', 'pass');

@@ -3,7 +3,7 @@
 
 $title = 'Success';
 require_once 'includes/header.php';
-require_once 'includes/auth.php';
+// require_once 'includes/auth.php';
 require_once 'db/conn.php';
 require_once 'sendEmail.php';
 
@@ -26,34 +26,28 @@ if(isset($_POST['submit'])){
     $dest = "$target_dir$contact.$ext";
     move_uploaded_file($orig_file,$dest);
 
-                $result = $crud->checkEmail($email);
-                var_dump('heheheh success');exit;
-
-                    // if ($result > 0) {
-                    //     var_dump('TAKEN OOOOO');exit;
-                    // }else{
-                    //     var_dump('NOT TAKEN OOOOO');exit;
-                    // }
-                    // exit();
                 
-                    // if($result['email'] == true){
-                    //     // var_dump('same ni');exit;
-                    // var_dump('trueeeeee');exit;
-
-                    // } else {
-                    // var_dump('Wrong house ' . $email);exit;
-
-                    //     // $email = $_GET['email'];
-                    //     // $res = $crud->checkEmail($email);        
-                    // }
+    // $result = $crud->checkEmail($email);
+    
     // call function to track if success or not
-    // $checkEmail = $validate->emailExist($email);
-    // var_dump($checkEmail);exit;
-    // $validation = $validate->backEndValidation($firstname, $email);
+    // $check = $validate->emailExist($email);
+    // var_dump($result);exit;
+
     
 
     $isSuccess = $crud->insertAttendee($firstname, $lastname, $dob, $specialty, $email, $contact, $dest);
     $specialtyName = $crud->getSpecialtyById($specialty);
+    
+    //use later
+    // $validation = $validate->backEndValidation();
+    $validation = $crud->checkEmail($email);
+                if ($validation){
+                    
+                    var_dump($email . 'taken');exit;
+                } else {
+                    var_dump($email . 'Not taken');exit;
+    
+                }
 
     if ($validation || $isSuccess) {
         // SendEmail::SendMail($email, 'TESTING', 'Welcome to IT conference 2022, You have sucesssfully registered'); 

@@ -117,20 +117,14 @@
         public function checkEmail($email){
             try {
                 $sql = "SELECT * FROM `attendee_tb` WHERE `email` = :email";
-                // $sql = 'SELECT * FROM `attendee_tb` WHERE `email` = :email';
+                $stmt = $this->db->query($sql);
+                // $stmt->bindparam(':email', $email);
+                // $stmt->execute();
+                // $ans = $stmt->rowCount();
+                var_dump($stmt);exit;
 
-                $stmt = $this->db->prepare($sql);
-                $stmt->bindparam(':email', $email);
-                $stmt->execute();
-                // $result = $stmt->fetch();
-                $ans = $stmt->rowCount();
-                if ($ans > 0) {
-                    var_dump('TAKEN OOOOO');exit;
-                } else {
-                    var_dump('Not taken');exit;
-
-                }
-                return $ans;
+                return $stmt;exit;
+                // return $ans;
             } catch (\PDOException $e) {
                 echo $e->getMessage();
                 return false;
