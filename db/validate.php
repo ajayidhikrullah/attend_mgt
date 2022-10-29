@@ -17,13 +17,14 @@
                     exit;
                 }
 
-                if ($this->invalidEmail($email) == false) {
+                if ($this->invalidEmail($this->email) == false) {
                     echo 'Invalid email, please check again';
                     // header('Location: includes/errormessage.php');
                     exit;
                 }
 
-                if ($this->emailExist() == false) {
+                if ($this->checkEmail($email)) {
+
                     echo 'Email already exist, please use another email.';
                     exit;
                 }
@@ -56,21 +57,7 @@
             return $result;
         }
 
-        public function emailExist(){
-            $result;
-            // $fetch = $validate->getAttendee();
-                // while ($r = $fetch->fetch(PDO::FETCH_ASSOC)) {
-                //     var_dump($r['email']);exit;
-
-                    // if ($r['email'] > 0 ) {
-                    //     var_dump('ooops');exit;
-                    //     $result = false;
-                    // }else{
-                    //     $result = true;
-                    // }
-                // }
-        }            
-
+        
     }
 
     // print_r(get_class_methods('Validate'));
