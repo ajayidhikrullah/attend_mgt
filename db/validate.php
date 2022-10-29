@@ -1,30 +1,31 @@
 <?php
-// require_once 'crud.php';
     Class Validate extends Crud{
         // private $db;
         public $firstname;
         public $email;
-        
-        function __construct($conn){
+
+        function __construct($conn, $firstname, $email){
             $this->db = $conn;
+            $this->firstname = $firstname;
+            $this->email = $email;
         }
 
         public function backEndValidation(){
             try{
-                // if ($this->emptyInput($this->firstname) || ($this->email) == false) {
-                //     echo "<div class='error'>Error empty Input for Firstname</div>";
-                //     // header('Location: includes/errormessage.php');
-                //     exit;
-                // }
+                if ($this->emptyInput($this->firstname) || ($this->email) == false) {
+                    echo "<div class='error'>Error empty Input for Firstname</div>";
+                    // header('Location: includes/errormessage.php');
+                    exit;
+                }
 
-                if ($this->invalidEmail($this->email) == false) {
+                if (!$this->invalidEmail($this->email)) {
                     echo 'Invalid email, please check again';
                     // header('Location: includes/errormessage.php');
                     exit;
                 }
 
-                if ($this->emailExist() == false) {
-                    echo 'Email already exist, please use another email.';
+                if ($this->checkEmail($this->email) == true) {
+                    echo "<div class='error'>Email already exist, please use another email</div>";
                     exit;
                 }
             }
@@ -47,29 +48,14 @@
 
         public function emptyInput(){
             $result = NULL;
-            if(!empty($this->firstname)){
+            if(!empty($this->firstname || $this->email)){
                 $result = false;
             }
             else{
                 $result = true;
             }
             return $result;
-        }
-
-        public function emailExist(){
-            $result;
-            // $fetch = $validate->getAttendee();
-                // while ($r = $fetch->fetch(PDO::FETCH_ASSOC)) {
-                //     var_dump($r['email']);exit;
-
-                    // if ($r['email'] > 0 ) {
-                    //     var_dump('ooops');exit;
-                    //     $result = false;
-                    // }else{
-                    //     $result = true;
-                    // }
-                // }
-        }            
+        }           
 
     }
 
