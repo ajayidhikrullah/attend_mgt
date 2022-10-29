@@ -1,7 +1,7 @@
 <?php
     class Crud{
         //private DB Obj 
-        private $db;
+        protected $db;
         //constructor to initialize private variable to the DB conn
         function __construct($conn){
             $this->db = $conn;
