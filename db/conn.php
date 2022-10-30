@@ -21,7 +21,7 @@
             // $crud = new \ACME\db\crud\Crud($pdo);
             require 'user.php';
             require 'validate.php';
-            // $crud = new Crud($pdo);
+            $crud = new Crud($pdo);
             $user = new User($pdo);
             $validate = new Validate($pdo);
 

@@ -1,5 +1,5 @@
 <?php
-  include_once 'includes\session.php';
+  include_once 'session.php';
 
 ?>
 <!doctype html>
