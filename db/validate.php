@@ -1,30 +1,31 @@
 <?php
+
     Class Validate extends Crud{
         // private $db;
         public $firstname;
         public $email;
 
-        function __construct($conn, $firstname, $email){
-            $this->db = $conn;
-            $this->firstname = $firstname;
-            $this->email = $email;
+        function __construct($conn){
+            // $this->db = $conn;
+            // $this->firstname = $firstname;
+            // $this->email = $email;
         }
 
-        public function backEndValidation(){
+        public function backEndValidation($firstname, $email){
             try{
-                if ($this->emptyInput($this->firstname) || ($this->email) == false) {
+                if (!$this->emptyInput($firstname, $email)) {
                     echo "<div class='error'>Error empty Input for Firstname</div>";
                     // header('Location: includes/errormessage.php');
                     exit;
                 }
 
-                if (!$this->invalidEmail($this->email)) {
+                if (!$this->invalidEmail($email)) {
                     echo 'Invalid email, please check again';
                     // header('Location: includes/errormessage.php');
                     exit;
                 }
 
-                if ($this->checkEmail($this->email) == true) {
+                if ($this->checkEmail($email) == true) {
                     echo "<div class='error'>Email already exist, please use another email</div>";
                     exit;
                 }
@@ -36,9 +37,9 @@
         }
 
         //functons to handle different errors scenarios
-        public function invalidEmail(){
+        public function invalidEmail($email){
             $result = NULL;
-            if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $result = false;
             } else{
                 $result = true;
@@ -46,9 +47,9 @@
             return $result;
         }
 
-        public function emptyInput(){
+        public function emptyInput($firstname, $email){
             $result = NULL;
-            if(!empty($this->firstname || $this->email)){
+            if(!empty($firstname || $email)){
                 $result = false;
             }
             else{

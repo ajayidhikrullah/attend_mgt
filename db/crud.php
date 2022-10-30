@@ -1,4 +1,7 @@
 <?php
+
+    // namespace ACME\db\crud;
+
     class Crud{
         //private DB Obj 
         protected $db;
