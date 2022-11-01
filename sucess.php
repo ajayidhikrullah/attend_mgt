@@ -27,13 +27,10 @@ if(isset($_POST['submit'])){
     move_uploaded_file($orig_file,$dest);
 
     $validation = $validate->backEndValidation($firstname, $email);
-    
-
     $isSuccess = $crud->insertAttendee($firstname, $lastname, $dob, $specialty, $email, $contact, $dest);
     $specialtyName = $crud->getSpecialtyById($specialty);
     
-
-    if ($isSuccess) {
+    if ($validation || $isSuccess) {
         // SendEmail::SendMail($email, 'TESTING', 'Welcome to IT conference 2022, You have sucesssfully registered'); 
         include 'includes/succesmessage.php';
         header('Location: view.php');

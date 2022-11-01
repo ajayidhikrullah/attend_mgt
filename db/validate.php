@@ -6,7 +6,7 @@
         public $email;
 
         function __construct($conn){
-            // $this->db = $conn;
+            $this->db = $conn;
             // $this->firstname = $firstname;
             // $this->email = $email;
         }
@@ -20,12 +20,13 @@
                 }
 
                 if (!$this->invalidEmail($email)) {
-                    echo 'Invalid email, please check again';
+                    echo "<div class='error'>Invalid email, please check again</div>";
                     // header('Location: includes/errormessage.php');
                     exit;
                 }
 
-                if ($this->checkEmail($email) == true) {
+
+                if (!$this->checkEmail($email)) {
                     echo "<div class='error'>Email already exist, please use another email</div>";
                     exit;
                 }
@@ -33,7 +34,7 @@
                 catch (PDOException $e) {
                     echo $e->getMessage();
                     return false;
-                }
+            }
         }
 
         //functons to handle different errors scenarios
@@ -49,7 +50,7 @@
 
         public function emptyInput($firstname, $email){
             $result = NULL;
-            if(!empty($firstname || $email)){
+            if(empty($firstname) || empty($email)){
                 $result = false;
             }
             else{
