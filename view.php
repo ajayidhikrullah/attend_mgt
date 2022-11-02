@@ -19,22 +19,34 @@ if (!isset($_GET['id'])) {
     <img src="<?php echo empty($result['avatar_path']) ? "prof_uploads/blank.png" : $result['avatar_path']; ?>" alt="re-upload image">
     <br/>
     <br/>
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title"><?= $result['firstname'] .' ' . $result['lastname'];?></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><?=$result['name'];?></h6>
-            <p class="card-text"></p>
-            <h6 class="card-subtitle mb-2 text-muted"><?=$result['dob'];?></h6>
-            <a href="#" class="card-link"><?=$result['email']?></a>
-            <a href="#" class="card-link"><?= $result['phone'];?></a>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $result['firstname'] .' ' . $result['lastname'];?></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><?=$result['name'];?></h6>
+                    <p class="card-text"></p>
+                    <h6 class="card-subtitle mb-2 text-muted"><?=$result['dob'];?></h6>
+                    <a href="#" class="card-link"><?=$result['email']?></a>
+                    <a href="#" class="card-link"><?= $result['phone'];?></a>
+                </div>
+            </div>
+            <br>
+            <br>
+        
+            <a href="viewrecords.php" class="btn btn-info">Back to List</a>
+            <a href="edit.php?id=<?=$result['attendee_id']?>" class="btn btn-warning">Edit</a>
+            <a onclick = "return confirm('Are you sure you want to delete this user?')"; href="delete.php?id=<?=$result['attendee_id']?>" class="btn btn-danger">Delete</a>
+
         </div>
+
+        <!-- chart stat -->
+        <div class="col-8">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+
     </div>
-    <br/>
-
-    <a href="viewrecords.php" class="btn btn-info">Back to List</a>
-    <a href="edit.php?id=<?=$result['attendee_id']?>" class="btn btn-warning">Edit</a>
-    <a onclick = "return confirm('Are you sure you want to delete this user?')"; href="delete.php?id=<?=$result['attendee_id']?>" class="btn btn-danger">Delete</a>
-
 <?php } ?>
 
 
