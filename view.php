@@ -7,16 +7,20 @@ require_once 'includes/auth.php';
 require_once 'db/conn.php';
 
 //get attendee by id
+// var_dump($_GET['id']);exit;
+
 if (!isset($_GET['id'])) {
     # code...
-    echo "<h1 class='text-danger'>Please check your details and try again</h1>";
+    echo "<h1 class='error'>Please check your details and try again</h1>";
 } else{
+    // var_dump('seconddd');exit;
+
     $id = $_GET['id'];
     $result = $crud->getAttendeeDetail($id);
 ?>
 
 
-    <img src="<?php echo empty($result['avatar_path']) ? "prof_uploads/blank.png" : $result['avatar_path']; ?>" alt="re-upload image">
+    <img src="<?php echo empty($result['avatar_path']) ? "/prof_uploads/blank.png" : $result['avatar_path']; ?>" alt="re-upload image">
     <br/>
     <br/>
 

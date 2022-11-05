@@ -119,16 +119,15 @@
 
         public function checkEmail($email){
             try {
-                $sql = "SELECT * FROM `attendee_tb` WHERE `email` = ':email'";
+                $sql = "SELECT * FROM `attendee_tb` WHERE `email` = :email";
                 // var_dump($sql);exit;
                 $stmt = $this->db->prepare($sql);
-
                 $stmt->bindparam(':email', $email);
                 $stmt->execute();
                 // var_dump($stmt);exit;
 
-                $result = $stmt->fetch();
-                // $ans = $stmt->rowCount();
+                // $result = $stmt->fetch();
+                $ans = $stmt->rowCount();
                 return $ans > 0 ? true : false;
                 if ($ans > 0) {
                     var_dump('TAKEN OOOOO');exit;

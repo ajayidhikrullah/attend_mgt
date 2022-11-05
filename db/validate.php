@@ -26,7 +26,7 @@
                 }
 
 
-                if (!$this->checkEmail($email)) {
+                if ($this->checkEmail($email)) {
                     echo "<div class='error'>Email already exist, please use another email</div>";
                     exit;
                 }
