@@ -19,6 +19,7 @@ Code used for PHP Bootstrap 4 Form and CRUD Application Development Exercises.
 - ** Admin can delete users information
 - ** Admin can create users information
 - ** users can upload profiile picture
+- ** Admin can create multiple events
 
 This project implements:
 

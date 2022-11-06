@@ -47,7 +47,7 @@ if (!isset($_GET['id'])) {
 
         <!-- chart stat -->
         <div class="col-8">
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <canvas id="myChart" width="50" height="20"></canvas>
         </div>
 
     </div>
