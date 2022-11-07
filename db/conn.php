@@ -21,13 +21,17 @@
             // $crud = new \ACME\db\crud\Crud($pdo);
             require 'user.php';
             require 'validate.php';
+            require 'event.php';
+            
             $crud = new Crud($pdo);
             $user = new User($pdo);
             $validate = new Validate($pdo);
+            $event = new Event($pdo);
+             
 
-            $user->insertUser('Admin', 'password');
-            $newU = $user->insertUser('Super-Admin', 'pass');
-            $newU = $user->insertUser('user', 'password');
+            // $user->insertUser('Dhikr', 'pass');
+            // $newU = $user->insertUser('Super-Admin', 'pass');
+            // $newU = $user->insertUser('user', 'password');
             // $sql = "SELECT * FROM `users` WHERE `dob` = '0000-00-00
             // '";
             // $stmt = $pdo->prepare($sql);
