@@ -22,11 +22,15 @@
             require 'user.php';
             require 'validate.php';
             require 'event.php';
+            require 'queries.php';
             
             $crud = new Crud($pdo);
             $user = new User($pdo);
             $validate = new Validate($pdo);
             $event = new Event($pdo);
+            $createQuery = new Query($pdo);
+            $createQuery->runQuery();
+
              
 
             // $user->insertUser('Dhikr', 'pass');
