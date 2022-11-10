@@ -10,7 +10,7 @@
         public function insertEvent($eventName, $venue, $numOfSeat){
             try {
 
-                $sql = "INSERT INTO events_tb (`name`, `num_of_seat`, `address`) VALUES (:eventName, :numOfSeat, :venue)";
+                $sql = "INSERT INTO events_tb (`name`, `num_of_seat`, `address`, `users_id`) VALUES (:eventName, :numOfSeat, :venue, ((SELECT `users_id` FROM `users` WHERE `username` = 'admin')))";
                 $stmt = $this->db->prepare($sql);
                 //bind all placeholders to the actual values
                 $stmt->bindParam(':eventName', $eventName);

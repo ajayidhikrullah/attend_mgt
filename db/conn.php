@@ -13,7 +13,7 @@
                 // echo 'Hello DB';
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch(PDOException $e){
-                // echo "<h1 class='text-danger'>Error in connection</h1>";
+                echo "<h1 class='text-danger'>Error in connection</h1>";
                 throw new PDOException($e->getMessage());
             }
             
@@ -29,7 +29,8 @@
             $validate = new Validate($pdo);
             $event = new Event($pdo);
             $createQuery = new Query($pdo);
-            $createQuery->runQuery();
+            //Uncomment to run query here
+            // $createQuery->runQuery();
 
              
 
