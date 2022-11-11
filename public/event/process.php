@@ -2,9 +2,9 @@
 <?php
 
 $title = 'Events Registration';
-require_once 'includes/header.php';
+require_once '../includes/header.php';
 // require_once 'includes/auth.php';
-require_once 'db/conn.php';
+require_once '../db/conn.php';
 
 
 if(isset($_POST['submit'])){
@@ -28,10 +28,10 @@ if(isset($_POST['submit'])){
     
     if ($isSuccess == true) {
     
-        include 'includes/succesmessage.php';
+        include '../includes/succesmessage.php';
         // header('Location: view.php');
     } else{
-            include 'includes/errormessage.php';
+            include '../includes/errormessage.php';
         
     }
 }
@@ -48,4 +48,4 @@ if(isset($_POST['submit'])){
                     </div>
                 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

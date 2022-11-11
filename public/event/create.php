@@ -2,13 +2,13 @@
 <?php
 
     $title = 'Events';
-    require_once 'includes/header.php';
-    require_once 'db/conn.php';
-    require_once 'includes/auth.php';
+    require_once '../includes/header.php';
+    require_once '../db/conn.php';
+    require_once '../includes/auth.php';
 ?>
 
 <h1 class="text-center">Register an Events</h1>
-        <form method='POST' action='eventsRegister.php' enctype="multipart/form-data">
+        <form method='POST' action='process.php' enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="event_name" class="form-label">Event Name</label>
                 <input type="text" class="form-control" id="event_name" name='event_name' placeholder="name of events">

@@ -1,9 +1,9 @@
 
 <?php
     $title = 'View Events';
-    require_once 'includes/header.php';
-    require_once 'includes/auth.php';
-    require_once 'db/conn.php';
+    require_once '../includes/header.php';
+    require_once '../includes/auth.php';
+    require_once '../db/conn.php';
 
     $results = $event->getEvent();
 
@@ -41,4 +41,4 @@
 
 
 
-<?php require_once 'includes/footer.php';?>
+<?php require_once '../includes/footer.php';?>
