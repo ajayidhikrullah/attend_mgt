@@ -1,9 +1,14 @@
 
 <?php
     $title = 'View Records';
-    require_once 'includes/header.php';
-    require_once 'includes/auth.php';
-    require_once 'db/conn.php';
+    require_once('../../private/initialize.php');
+    $title = 'Index';
+    require_once (INCLUDE_PATH . '/header.php');
+    require_once (INCLUDE_PATH . '/auth.php');
+    require_once (PRIVATE_PATH . '/db/conn.php');
+    // require_once 'includes/header.php';
+    // require_once 'includes/auth.php';
+    // require_once 'db/conn.php';
 
     $results = $crud->getAttendee();
 
@@ -41,4 +46,4 @@
 
 
 
-<?php require_once 'includes/footer.php';?>
+<?php require_once INCLUDE_PATH.'/footer.php';?>

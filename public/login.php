@@ -1,8 +1,12 @@
 <?php
+    require_once('../private/initialize.php');
     $title = 'User Login';
 
-    require_once 'includes/header.php';
-    require_once 'db/conn.php';
+    require_once (INCLUDE_PATH . '/header.php');
+    require_once (PRIVATE_PATH . '/db/conn.php');
+
+    // require_once 'includes/header.php';
+    // require_once 'db/conn.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
@@ -21,7 +25,7 @@
 
             $_SESSION['username'] = $username;
             $_SESSION['userId'] = $result['users_id'];
-            header("Location: viewrecords.php");
+            header("Location: attendee/viewrecords.php");
         }
     }
 

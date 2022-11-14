@@ -43,11 +43,11 @@
               <?php
                   if (!isset($_SESSION['userId'])) {
               ?>
-                <a class="nav-link active" aria-current="page" href="login.php">Login</a>
+                <a class="nav-link active" aria-current="page" href="<?php echo WWW_ROOT . '/login.php'?>">Login</a>
               <?php } else { ?>
                 <img src="<?php echo empty($SESSION['avatar_path']) ? "'PRIVATE_PATH' . '/prof_uploads/blank.png" : $SESSION['avatar_path']; ?>" alt="">
                 <a href="#" class="nav-link active"><span>Welcome <?php echo $_SESSION['username'];?></span></a>
-                <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
+                <a class="nav-link active" aria-current="page" href="<?php echo Url_for('logout.php')?>">Logout</a>
               <?php } ?>
             </li>
             <li class="nav-item">
