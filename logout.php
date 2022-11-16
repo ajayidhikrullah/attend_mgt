@@ -1,5 +1,5 @@
 <?php
-    require_once('../private/initialize.php');
+    require_once('private/initialize.php');
     // include_once (WWW_ROOT .'/session.php');
     // require_once 'includes/auth.php';
     require_once (INCLUDE_PATH . '/header.php');

@@ -1,6 +1,6 @@
 
 <?php
-    require_once('../private/initialize.php');
+    require_once('private/initialize.php');
     $title = 'Index';
     require_once (INCLUDE_PATH . '/header.php');
     require_once (PRIVATE_PATH . '/db/conn.php');

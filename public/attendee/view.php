@@ -1,10 +1,15 @@
 
 <?php
 
+require_once('../../private/initialize.php');
 $title = 'View Details';
-require_once 'includes/header.php';
-require_once 'includes/auth.php';
-require_once 'db/conn.php';
+require_once (INCLUDE_PATH . '/header.php');
+require_once (INCLUDE_PATH . '/auth.php');
+require_once (PRIVATE_PATH . '/db/conn.php');
+
+// require_once 'includes/header.php';
+// require_once 'includes/auth.php';
+// require_once 'db/conn.php';
 
 //get attendee by id
 // var_dump($_GET['id']);exit;
@@ -56,4 +61,4 @@ if (!isset($_GET['id'])) {
 
 
 
-<?php require_once 'includes/footer.php';?>
+<?php require_once INCLUDE_PATH.'/footer.php';?>

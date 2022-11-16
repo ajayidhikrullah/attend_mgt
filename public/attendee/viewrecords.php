@@ -1,8 +1,7 @@
 
 <?php
-    $title = 'View Records';
     require_once('../../private/initialize.php');
-    $title = 'Index';
+    $title = 'View Records';
     require_once (INCLUDE_PATH . '/header.php');
     require_once (INCLUDE_PATH . '/auth.php');
     require_once (PRIVATE_PATH . '/db/conn.php');

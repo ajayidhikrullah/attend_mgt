@@ -1,5 +1,5 @@
 <?php
-    require_once('../private/initialize.php');
+    require_once('private/initialize.php');
     $title = 'User Login';
 
     require_once (INCLUDE_PATH . '/header.php');
@@ -25,7 +25,7 @@
 
             $_SESSION['username'] = $username;
             $_SESSION['userId'] = $result['users_id'];
-            header("Location: attendee/viewrecords.php");
+            header("Location:" . PUBLIC_PATH . "/attendee/viewrecords.php");
         }
     }
 
@@ -39,7 +39,7 @@
             <td><label for="username">Username: *</label></td>
             <td><input type="text" name="username" class="form-control" id="username" value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['username']?>">
 
-            <?php if (empty($username) && $_SERVER['REQUEST_METHOD'] == 'POST') echo "<p class='text-danger'>$username_error</p>"; ?>
+            <?php if (empty($username) && $_SERVER['REQUEST_METHOD'] == 'POST') echo "<p class='text-danger'>Username is empty</p>"; ?>
             </td>
         </tr>
 
@@ -48,7 +48,7 @@
             <td>
                 <input type="password" name="password" id="password" value="" class="form-control" id="password">
 
-                <?php if(empty($password) && isset($password_error)) echo "<p class='text-danger'>$password_error</p>";?>
+                <?php if(empty($password) && isset($password_error)) echo "<p class='text-danger'>Password is empty</p>";?>
 
             </td>
         </tr>
