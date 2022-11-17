@@ -25,7 +25,7 @@ if (!isset($_GET['id'])) {
 ?>
 
 
-    <img src="<?php echo empty($result['avatar_path']) ? "/prof_uploads/blank.png" : $result['avatar_path']; ?>" alt="re-upload image">
+    <img src="<?php echo empty($result['avatar_path']) ? '../../private/includes/prof_uploads/blank.png' : $result['avatar_path']; ?>" alt="re-upload image">
     <br/>
     <br/>
 

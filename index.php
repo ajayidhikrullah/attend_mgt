@@ -9,7 +9,7 @@
 ?>
 
         <h1 class="text-center">Registration for Conference</h1>
-        <form method='POST' action="'PUBLIC_PATH' . sucess.php" enctype="multipart/form-data">
+        <form method='POST' action="<?php echo PUBLIC_PATH .'/attendee/sucess.php'?>" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="firstname" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="firstname" name='firstname' placeholder="your first name">

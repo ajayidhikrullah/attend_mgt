@@ -1,10 +1,16 @@
 
 <?php
 
+require_once('../../private/initialize.php');
 $title = 'Success';
-require_once 'includes/header.php';
-// require_once 'includes/auth.php';
-require_once 'db/conn.php';
+require_once (INCLUDE_PATH . '/header.php');
+// require_once (INCLUDE_PATH . '/auth.php');
+require_once (PRIVATE_PATH . '/db/conn.php');
+
+// $title = 'Success';
+// require_once 'includes/header.php';
+// // require_once 'includes/auth.php';
+// require_once 'db/conn.php';
 require_once 'sendEmail.php';
 
 
@@ -55,4 +61,4 @@ if(isset($_POST['submit'])){
                     </div>
                 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+    <?php require_once INCLUDE_PATH.'/footer.php';?>
